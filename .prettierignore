@@ -1,0 +1,18 @@
+# dependencies
+node_modules/
+
+# build
+cache/
+artifacts/
+public/
+
+# misc
+.env
+.gitignore
+.prettierignore
+package-lock.json
+*.png
+*.jpg
+*.txt
+*.otf
+*.svg

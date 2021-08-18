@@ -1,0 +1,27 @@
+{
+	"private": true,
+	"scripts": {
+		"format": "prettier --write \"./**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+		"start": "node ."
+	},
+	"dependencies": {
+		"apollo-cache-inmemory": "^1.6.6",
+		"apollo-client": "^2.6.10",
+		"apollo-link-http": "^1.5.17",
+		"body-parser": "^1.19.0",
+		"cors": "^2.8.5",
+		"discord.js": "^13.1.0",
+		"ethers": "^5.4.4",
+		"express": "^4.17.1",
+		"graphql-tag": "^2.12.5",
+		"jsonwebtoken": "^8.5.1",
+		"lodash": "^4.17.21",
+		"node-fetch": "^2.6.1"
+	},
+	"engines": {
+		"node": "16.x"
+	},
+	"devDependencies": {
+		"prettier": "^2.3.2"
+	}
+}
