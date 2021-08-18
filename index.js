@@ -33,11 +33,11 @@ const link = createHttpLink({ uri: explorer, fetch: fetch });
 const graph = new ApolloClient({ link, cache: new InMemoryCache() });
 const Service = readFileSync("resources/interfaces/Service.json").toString();
 
-if (dyno === "web.1") {
-	express.use(cors());
-	express.use(bodyParser.json());
-	express.use(bodyParser.urlencoded({ extended: true }));
+express.use(cors());
+express.use(bodyParser.json());
+express.use(bodyParser.urlencoded({ extended: true }));
 
+if (dyno === "web.1") {
 	client.once("ready", () =>
 		express.post("/", (request, response) =>
 			promote({
@@ -52,8 +52,6 @@ if (dyno === "web.1") {
 			})
 		)
 	);
-
-	express.listen(process.env.PORT || 3000);
 } else {
 	client.once("ready", () =>
 		ready({
@@ -77,4 +75,5 @@ if (dyno === "web.1") {
 	);
 }
 
+express.listen(process.env.PORT || 3000);
 client.login(token);
